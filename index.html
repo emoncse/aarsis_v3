@@ -58,11 +58,11 @@
 
   <style>
     :root {
-      /* --primary: #e93e73; */
-      --primary: #E91E63;
+      --primary: #e93e73;
+      /* --primary: #E91E63; */
       --bg-light: #fbfafe;
       --accent: #e8695f;
-      --highlight: #f6e11d;
+      --highlight: #85f77386;
     }
     .gradient-text {
       background: linear-gradient(45deg, var(--primary), var(--accent));
@@ -131,7 +131,7 @@
   </script>
 
   <!-- Navbar -->
-  <nav class="fixed w-full z-50 navbar-blur bg-white/80 shadow-sm">
+  <nav class="fixed w-full z-50 navbar-blur bg-white/80 backdrop-blur-md shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
         <div class="flex-shrink-0">
@@ -140,17 +140,42 @@
             <span class="text-xl font-bold text-[var(--primary)]">aarsis</span>
           </a>
         </div>
-        <div class="hidden md:flex md:items-center md:space-x-8">
-          <a href="#about" class="text-gray-600 hover:text-[var(--primary)] transition">About</a>
-          <a href="#services" class="text-gray-600 hover:text-[var(--primary)] transition">Services</a>
-          <a href="#team" class="text-gray-600 hover:text-[var(--primary)] transition">Team</a>
-          <a href="#projects" class="text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
-          <a href="#partners" class="text-gray-600 hover:text-[var(--primary)] transition">Partners</a>
-          <a href="#contact" class="bg-[var(--primary)] text-white px-4 py-2 rounded hover:bg-[var(--accent)] transition">Contact</a>
+        <div class="hidden md:flex md:items-center md:space-x-1">
+          <a href="#about" class="nav-link group relative px-4 py-2 hover:bg-gray-50/50 rounded-lg transition-all duration-300">
+            <span class="relative flex items-center text-gray-600 group-hover:text-[var(--primary)]">
+              About
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--primary)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </span>
+          </a>
+          <a href="#services" class="nav-link group relative px-4 py-2 hover:bg-gray-50/50 rounded-lg transition-all duration-300">
+            <span class="relative flex items-center text-gray-600 group-hover:text-[var(--primary)]">
+              Services
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--primary)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </span>
+          </a>
+          <a href="#team" class="nav-link group relative px-4 py-2 hover:bg-gray-50/50 rounded-lg transition-all duration-300">
+            <span class="relative flex items-center text-gray-600 group-hover:text-[var(--primary)]">
+              Team
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--primary)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </span>
+          </a>
+          <a href="#projects" class="nav-link group relative px-4 py-2 hover:bg-gray-50/50 rounded-lg transition-all duration-300">
+            <span class="relative flex items-center text-gray-600 group-hover:text-[var(--primary)]">
+              Projects
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--primary)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </span>
+          </a>
+          <a href="#partners" class="nav-link group relative px-4 py-2 hover:bg-gray-50/50 rounded-lg transition-all duration-300">
+            <span class="relative flex items-center text-gray-600 group-hover:text-[var(--primary)]">
+              Partners
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--primary)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </span>
+          </a>
+          <a href="#contact" class="ml-4 bg-[var(--primary)] text-white px-6 py-2 rounded-full hover:bg-[var(--accent)] transition-all duration-300 transform hover:scale-105 hover:shadow-lg">Contact</a>
         </div>
         <!-- Mobile menu button -->
         <div class="md:hidden">
-          <button id="menuBtn" class="text-gray-600 hover:text-[var(--primary)] transition">
+          <button id="menuBtn" class="text-gray-600 hover:text-[var(--primary)] transition p-2 rounded-lg hover:bg-gray-50/50">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
@@ -159,17 +184,65 @@
       </div>
     </div>
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white">
-      <div class="px-4 pt-2 pb-3 space-y-1">
-        <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">About</a>
-        <a href="#services" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Services</a>
-        <a href="#team" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Team</a>
-        <a href="#projects" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
-        <a href="#partners" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Partners</a>
-        <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Contact</a>
+    <div id="mobileMenu" class="hidden md:hidden">
+      <div class="px-4 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md border-t border-gray-100">
+        <a href="#about" class="block px-4 py-2 text-gray-600 hover:text-[var(--primary)] hover:bg-gray-50/50 rounded-lg transition-all duration-300">About</a>
+        <a href="#services" class="block px-4 py-2 text-gray-600 hover:text-[var(--primary)] hover:bg-gray-50/50 rounded-lg transition-all duration-300">Services</a>
+        <a href="#team" class="block px-4 py-2 text-gray-600 hover:text-[var(--primary)] hover:bg-gray-50/50 rounded-lg transition-all duration-300">Team</a>
+        <a href="#projects" class="block px-4 py-2 text-gray-600 hover:text-[var(--primary)] hover:bg-gray-50/50 rounded-lg transition-all duration-300">Projects</a>
+        <a href="#partners" class="block px-4 py-2 text-gray-600 hover:text-[var(--primary)] hover:bg-gray-50/50 rounded-lg transition-all duration-300">Partners</a>
+        <a href="#contact" class="block px-4 py-2 mt-2 text-center bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--accent)] transition-all duration-300 hover:shadow-lg">Contact</a>
       </div>
     </div>
   </nav>
+
+  <style>
+  .nav-link.active span {
+    color: var(--primary);
+  }
+  .nav-link.active span::after {
+    transform: scaleX(1);
+  }
+  </style>
+
+  <script>
+  // Add intersection observer for nav highlighting
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  });
+  </script>
 
   <!-- Hero -->
   <header class="hero-gradient text-white pt-28 pb-20 relative">
@@ -179,11 +252,12 @@
           Transforming Ideas Into Digital Reality
         </h1>
         <p class="text-xl mb-8 text-gray-100">Building innovative software solutions that drive business growth and success.</p>
-        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+        <br>
+		<div class="flex flex-wrap gap-4 justify-center md:justify-start">
           <button
             data-cal-link="aarsis/schedule-a-meeting"
             data-cal-config='{"theme":"light","brandColor":"#E91E63"}'
-            class="inline-flex items-center justify-center bg-white text-[var(--primary)] font-semibold px-8 py-3 rounded-full hover:bg-[var(--highlight)] transition transform hover:scale-105 min-w-[200px]">
+            class="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[var(--primary)] transition transform hover:scale-105 min-w-[200px]">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
             </svg>
@@ -196,7 +270,7 @@
         </div>
       </div>
       <div class="md:w-1/2" data-aos="zoom-in" data-aos-delay="200">
-        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_iorpbol0.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></lottie-player>
+        <lottie-player src="images/lottie_files/about_us.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></lottie-player>
       </div>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[var(--bg-light)] to-transparent"></div>
@@ -210,7 +284,7 @@
     </div>
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div data-aos="fade-right">
-        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_pwohahvd.json" background="transparent" speed="1" style="width: 100%; height: 300px;" loop autoplay></lottie-player>
+        <lottie-player src="images/lottie_files/hero_section.json" background="transparent" speed="1" style="width: 100%; height: 300px;" loop autoplay></lottie-player>
       </div>
       <div data-aos="fade-left">
         <h3 class="text-2xl font-bold mb-4 text-gray-800">Innovating Through Technology</h3>
@@ -283,22 +357,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Hire Team -->
-  <section class="bg-[var(--accent)] text-white py-20 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-4">Hire a Dedicated Team</h2>
-    <p class="max-w-xl mx-auto mb-6">Access top talent — engineers, designers, QA — for your next big move.</p>
-    <button
-            data-cal-link="aarsis/schedule-a-meeting"
-            data-cal-config='{"theme":"light","brandColor":"#E91E63"}'
-            class="inline-flex items-center justify-center bg-white text-[var(--primary)] font-semibold px-8 py-3 rounded-full hover:bg-[var(--highlight)] transition transform hover:scale-105 min-w-[200px]">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-            Start Hiring
-          </button>
-    <!-- <a href="#contact" class="bg-white text-[var(--primary)] font-semibold px-6 py-3 rounded hover:bg-[var(--highlight)] transition">Start Hiring</a> -->
   </section>
 
   <!-- Team Section -->
@@ -436,6 +494,475 @@
     </div>
   </section>
 
+  <!-- Hire Team -->
+  <section class="bg-[var(--accent)] text-white py-20 text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Hire a Dedicated Team</h2>
+    <p class="max-w-xl mx-auto mb-6">Access top talent — engineers, designers, QA — for your next big move.</p>
+    <button
+            data-cal-link="aarsis/schedule-a-meeting"
+            data-cal-config='{"theme":"light","brandColor":"#E91E63"}'
+            class="inline-flex items-center justify-center bg-white text-[var(--primary)] font-semibold px-8 py-3 rounded-full hover:bg-[var(--highlight)] transition transform hover:scale-105 min-w-[200px]">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Start Hiring
+          </button>
+    <!-- <a href="#contact" class="bg-white text-[var(--primary)] font-semibold px-6 py-3 rounded hover:bg-[var(--highlight)] transition">Start Hiring</a> -->
+  </section>
+
+  <!-- Our Stack & Technology -->
+  <section class="py-20 bg-gradient-to-b from-white to-[var(--bg-light)] overflow-hidden relative" id="tech-stack">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Animated Background Blobs -->
+      <div class="absolute inset-0">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-[var(--accent)] to-[var(--highlight)] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-gradient-to-r from-[var(--highlight)] to-[var(--primary)] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
+      </div>
+
+      <!-- Section Header -->
+      <div class="text-center mb-16 relative" data-aos="fade-up">
+        <span class="text-sm font-bold text-[var(--accent)] uppercase tracking-wider mb-2 block">Tech Excellence</span>
+        <h2 class="text-5xl font-bold mb-4 bg-gradient-to-r from-[var(--primary)] via-[var(--accent)] to-[var(--highlight)] bg-clip-text text-transparent">Our Stack & Technology</h2>
+        <div class="w-24 h-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mx-auto rounded-full mb-4"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">Empowering Innovation with Cutting-Edge Technology Stack</p>
+      </div>
+      
+      <!-- Tech Categories -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+        <!-- Backend Development -->
+        <div class="tech-card group bg-white" data-aos="fade-up">
+          <div class="relative overflow-hidden p-12 h-full">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div class="relative z-10 h-full flex flex-col">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Backend</h3>
+                <div class="w-24 h-24 transform group-hover:scale-110 transition-transform duration-500">
+                  <lottie-player src="images/lottie_files/backend_new.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                </div>
+              </div>
+              <div class="space-y-4 flex-grow">
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+                    Languages
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Node.js</span>
+                    <span class="tech-pill">Java</span>
+                    <span class="tech-pill">GoLang</span>
+                  </div>
+                </div>
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+                    Frameworks
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">Django</span>
+                    <span class="tech-pill">FastAPI</span>
+                    <span class="tech-pill">Express</span>
+                    <span class="tech-pill">Spring</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frontend Development -->
+        <div class="tech-card group bg-white" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative overflow-hidden p-12 h-full">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div class="relative z-10 h-full flex flex-col">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Frontend</h3>
+                <div class="w-24 h-24 transform group-hover:scale-110 transition-transform duration-500">
+                  <lottie-player src="images/lottie_files/frontend.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                </div>
+              </div>
+              <div class="space-y-4 flex-grow">
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+                    Core
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">TypeScript</span>
+                    <span class="tech-pill">HTML5/CSS3</span>
+                  </div>
+                </div>
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+                    Frameworks
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">Next.js</span>
+                    <span class="tech-pill">React.js</span>
+                    <span class="tech-pill">Vue.js</span>
+                    <span class="tech-pill">Angular</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+		    <div class="tech-card group bg-white" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative overflow-hidden p-12 h-full">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div class="relative z-10 h-full flex flex-col">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Mobile</h3>
+                <div class="w-24 h-24 transform group-hover:scale-110 transition-transform duration-500">
+                  <lottie-player src="images/lottie_files/mobile.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                </div>
+              </div>
+              <div class="space-y-4 flex-grow">
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+                    Core Development
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">Android</span>
+					<span class="tech-pill">Swift</span>
+                  </div>
+                </div>
+				<div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+					Cross-Platform Development
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">Kotlin</span>
+					<span class="tech-pill">React Native</span>
+					<span class="tech-pill">Flutter</span>
+                  </div>
+                </div>
+				<div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+					Mobile Database
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+					<span class="tech-pill">Realm</span>
+                    <span class="tech-pill">Firebase</span>
+                    <span class="tech-pill">SQLite</span>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="tech-card group bg-white" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative overflow-hidden p-12 h-full">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div class="relative z-10 h-full flex flex-col">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Database</h3>
+                <div class="w-24 h-24 transform group-hover:scale-110 transition-transform duration-500">
+                  <lottie-player src="images/lottie_files/database.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                </div>
+              </div>
+              <div class="space-y-4 flex-grow">
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+                    SQL
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">PostgreSQL</span>
+                    <span class="tech-pill">MySQL</span>
+                  </div>
+                </div>
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+                    NoSQL
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">MongoDB</span>
+                    <span class="tech-pill">Redis</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DevOps -->
+        <div class="tech-card group bg-white" data-aos="fade-up" data-aos-delay="400">
+          <div class="relative overflow-hidden p-12 h-full">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div class="relative z-10 h-full flex flex-col">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">DevOps</h3>
+                <div class="w-24 h-24 transform group-hover:scale-110 transition-transform duration-500">
+                  <lottie-player src="images/lottie_files/devops.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                </div>
+              </div>
+              <div class="space-y-4 flex-grow">
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">Docker</span>
+                    <span class="tech-pill">Kubernetes</span>
+                    <span class="tech-pill">Ansible</span>
+                    <span class="tech-pill">Terraform</span>
+                    <span class="tech-pill">Jenkins</span>
+                    <span class="tech-pill">CircleCI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud & Email Services -->
+        <div class="tech-card group bg-white" data-aos="fade-up" data-aos-delay="500">
+          <div class="relative overflow-hidden p-12 h-full">
+            <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div class="relative z-10 h-full flex flex-col">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Cloud & Email</h3>
+                <div class="w-24 h-24 transform group-hover:scale-110 transition-transform duration-500">
+                  <lottie-player src="images/lottie_files/cloud.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+                </div>
+              </div>
+              <div class="space-y-4 flex-grow">
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+                    Cloud
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">AWS</span>
+                    <span class="tech-pill">Digital Ocean</span>
+                    <span class="tech-pill">Hostinger</span>
+                  </div>
+                </div>
+                <div class="transform transition-all duration-500 group-hover:translate-x-2">
+                  <h4 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
+                    <span class="w-6 h-px bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] mr-2"></span>
+                    Email
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tech-pill">Google Workspace</span>
+                    <span class="tech-pill">Microsoft 365</span>
+                    <span class="tech-pill">ZohoMail</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .tech-pill {
+          padding: 0.5rem 1rem;
+          background-color: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(8px);
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          font-weight: 500;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+          transition: all 0.5s ease;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tech-pill:hover {
+          background: linear-gradient(to right, var(--primary), var(--accent));
+          color: white;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-card {
+          background-color: white;
+          border-radius: 1rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          transform: translateY(0);
+          transition: all 0.5s ease;
+          position: relative;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          min-height: 480px;
+          backdrop-filter: blur(12px);
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .tech-card > div {
+          height: 100%;
+          width: 100%;
+        }
+
+        .tech-card .relative.z-10 {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .tech-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(to right, var(--primary), var(--accent));
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.5s ease;
+        }
+
+        .tech-card:hover::before {
+          transform: scaleX(1);
+        }
+
+        .tech-card .absolute {
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+
+        .tech-card:hover .absolute {
+          opacity: 0.5 !important;
+        }
+
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0px); }
+        }
+
+        .floating {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+
+        .tech-icon {
+          transition: all 0.5s ease;
+        }
+
+        .tech-card:hover .tech-icon {
+          transform: scale(1.1);
+        }
+
+        .tech-card:hover .tech-content {
+          transform: translateX(8px);
+        }
+
+        .tech-content {
+          transition: transform 0.5s ease;
+        }
+      </style>
+    </div>
+  </section>
+
+  <!-- Recent Projects -->
+  <section id="projects" class="py-20 bg-[var(--bg-light)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text inline-block">Recent Projects</h2>
+        <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Showcasing our latest work and innovations</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHdlYnNpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" 
+                 alt="Project" 
+                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <a href="#" class="bg-white text-[var(--primary)] px-6 py-2 rounded-full transform -translate-y-4 group-hover:translate-y-0 transition">View Project</a>
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+            <p class="text-gray-600">A full-featured online shopping platform with AI-powered recommendations.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXBwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" 
+                 alt="Project" 
+                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <a href="#" class="bg-white text-[var(--primary)] px-6 py-2 rounded-full transform -translate-y-4 group-hover:translate-y-0 transition">View Project</a>
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold mb-2">Health Tracking App</h3>
+            <p class="text-gray-600">Mobile application for tracking health metrics and wellness goals.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRhc2hib2FyZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" 
+                 alt="Project" 
+                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <a href="#" class="bg-white text-[var(--primary)] px-6 py-2 rounded-full transform -translate-y-4 group-hover:translate-y-0 transition">View Project</a>
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+            <p class="text-gray-600">Real-time data visualization and business intelligence platform.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Projects Button -->
+      <div class="text-center mt-12">
+        <a href="#" class="inline-flex items-center space-x-2 bg-[var(--primary)] text-white px-8 py-3 rounded-full hover:bg-[var(--accent)] transition transform hover:scale-105">
+          <span>View All Projects</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Clients Section -->
   <section class="py-20 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
@@ -556,75 +1083,6 @@
     </style>
   </section>
 
-  <!-- Recent Projects -->
-  <section id="projects" class="py-20 bg-[var(--bg-light)]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-4xl font-bold mb-4 gradient-text inline-block">Recent Projects</h2>
-        <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
-        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Showcasing our latest work and innovations</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project 1 -->
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative h-64 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHdlYnNpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" 
-                 alt="Project" 
-                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <a href="#" class="bg-white text-[var(--primary)] px-6 py-2 rounded-full transform -translate-y-4 group-hover:translate-y-0 transition">View Project</a>
-            </div>
-          </div>
-          <div class="p-6 bg-white">
-            <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
-            <p class="text-gray-600">A full-featured online shopping platform with AI-powered recommendations.</p>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative h-64 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXBwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" 
-                 alt="Project" 
-                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <a href="#" class="bg-white text-[var(--primary)] px-6 py-2 rounded-full transform -translate-y-4 group-hover:translate-y-0 transition">View Project</a>
-            </div>
-          </div>
-          <div class="p-6 bg-white">
-            <h3 class="text-xl font-semibold mb-2">Health Tracking App</h3>
-            <p class="text-gray-600">Mobile application for tracking health metrics and wellness goals.</p>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
-          <div class="relative h-64 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRhc2hib2FyZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" 
-                 alt="Project" 
-                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <a href="#" class="bg-white text-[var(--primary)] px-6 py-2 rounded-full transform -translate-y-4 group-hover:translate-y-0 transition">View Project</a>
-            </div>
-          </div>
-          <div class="p-6 bg-white">
-            <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
-            <p class="text-gray-600">Real-time data visualization and business intelligence platform.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- View All Projects Button -->
-      <div class="text-center mt-12">
-        <a href="#" class="inline-flex items-center space-x-2 bg-[var(--primary)] text-white px-8 py-3 rounded-full hover:bg-[var(--accent)] transition transform hover:scale-105">
-          <span>View All Projects</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Partners Section -->
   <section id="partners" class="py-20 bg-gradient-to-b from-white to-[var(--bg-light)]">
     <div class="max-w-7xl mx-auto px-6">
@@ -637,7 +1095,7 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Partner 1: Founders Credit -->
         <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
               <img src="https://download.logo.wine/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.png" alt="Founders Credit" class="h-16">
@@ -660,7 +1118,7 @@
 
         <!-- Partner 2: Domain & Hosting -->
         <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
               <img src="https://www.hostever.com/wp-content/uploads/2022/07/hostever-logo-black-white.svg" alt="Domain & Hosting" class="h-16">
@@ -671,15 +1129,15 @@
               <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Hosting</span>
               <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Domain</span>
               <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">SSL</span>
-			  <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">VPS</span>
-			  <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Dedicated Server</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">VPS</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Dedicated Server</span>
             </div>
           </div>
         </div>
 
         <!-- Partner 3: Bulk SMS -->
         <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
               <img src="https://www.mimsms.com/storage/2021/04/cropped-mim-sms-logo-2020.png" alt="Bulk SMS" class="h-16">
@@ -687,7 +1145,7 @@
             <h3 class="text-xl font-semibold mb-4 text-center">Bulk SMS</h3>
             <p class="text-gray-600 text-center mb-6">Leading Provider for SMS Solutions</p>
             <div class="flex flex-wrap justify-center gap-2">
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">SMS</span>
+				<span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">SMS</span>
               <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Communication</span>
             </div>
           </div>
@@ -695,50 +1153,60 @@
       </div>
 
       <!-- Partnership CTA -->
-      <div class="text-center mt-16" data-aos="fade-up">
-        <p class="text-xl text-gray-600 mb-6">Interested in becoming a partner?</p>
-        <a href="#contact" class="inline-flex items-center space-x-2 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-500">
+	<div class="text-center mt-16" data-aos="fade-up">
+       <!-- <p class="text-xl text-gray-600 mb-6">Want to partner with us?</p> -->
+		<!-- colour change button -->
+		<a href="#contact" class="inline-flex items-center space-x-2 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-500">
           <span>Partner With Us</span>
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-      </div>
+        </a> 
     </div>
   </section>
 
-  <!-- Contact / Footer -->
-  <footer id="contact" class="bg-[var(--primary)] text-white">
-    <div class="max-w-7xl mx-auto">
-      <!-- Contact Section -->
+  <section id="contact" class="bg-gradient-to-b from-[var(--primary)] to-[var(--accent)] text-white pt-20 pb-20 relative">
+	<!-- Contact Section -->
       <div class="py-20 px-6">
         <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
           <h2 class="text-4xl font-bold mb-8">Let's Collaborate</h2>
-          <p class="text-xl mb-12">Have an idea or need a tech partner? We're here to help you succeed.</p>
+          <p class="text-xl mb-12">Have an idea or need a tech partner? We are here to help you succeed.</p>
           <div class="grid md:grid-cols-3 gap-8 text-center">
-            <div class="p-6 rounded-lg bg-white/10 backdrop-blur">
+            <!-- <div class="p-6 rounded-lg bg-white/10 backdrop-blur">
               <i class="fas fa-envelope text-3xl mb-4"></i>
               <h3 class="text-xl font-semibold mb-2">Email Us</h3>
               <a href="mailto:business@aarsis.com" class="hover:text-[var(--highlight)] transition">business@aarsis.com</a>
+            </div> -->
+			<!-- two address Australia & Bangladesh -->
+            <div class="p-6 rounded-lg bg-white/10 backdrop-blur">
+              <i class="fas fa-map-marker-alt text-3xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2 justify-center">Australia Branch</h3>
+              <a href="https://maps.app.goo.gl/psdsiBKmJQ2jSjfw9" target="_blank">30, South Terrace, Punchbowl, NSW, Australia-2196</a>
             </div>
             <div class="p-6 rounded-lg bg-white/10 backdrop-blur">
               <i class="fas fa-map-marker-alt text-3xl mb-4"></i>
-              <h3 class="text-xl font-semibold mb-2">Visit Us</h3>
-              <p>40, West Kafrul, Dhaka, Bangladesh-1207</p>
+              <h3 class="text-xl font-semibold mb-2 justify-center">Bangladesh Branch</h3>
+              <a href="https://maps.app.goo.gl/ToBCrjJdB2pbEyhp9" target="_blank">40, West Kafrul, Dhaka, Bangladesh-1207</a>
             </div>
             <div class="p-6 rounded-lg bg-white/10 backdrop-blur">
               <i class="fas fa-phone text-3xl mb-4"></i>
               <h3 class="text-xl font-semibold mb-2">Call Us</h3>
-              <a href="tel:+8801773580898" class="hover:text-[var(--highlight)] transition">+8801773580898</a>
+			  <a href="tel:+61431725350" class="hover:text-[var(--highlight)] transition">+61 431 725 350 (Aus)</a><br>
+              <a href="tel:+8801773580898" class="hover:text-[var(--highlight)] transition">+88 017 73580898 (BD)</a>
             </div>
           </div>
         </div>
       </div>
-      
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="bg-gradient-to-b from-[var(--accent)] to-[var(--primary)] text-white pt-15 pb-10 relative">
+    <div class="max-w-7xl mx-auto">
       <!-- Footer Bottom -->
       <div class="border-t border-white/20">
         <div class="max-w-7xl mx-auto px-6 py-8">
           <div class="grid md:grid-cols-4 gap-8">
             <div class="mb-8 md:mb-0">
-              <h3 class="text-2xl font-bold mb-4">Aarsis</h3>
+				<img src="images/logo/logo_512_512.jpg" alt="Aarsis Logo" class="w-32 mb-4 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4">aarsis</h3>
               <p class="text-sm text-gray-300">Transforming ideas into digital reality through innovative software solutions.</p>
             </div>
             <div>
@@ -766,7 +1234,7 @@
               </div>
             </div>
           </div>
-          <div class="text-center mt-12 pt-8 border-t border-white/20">
+          <div class="text-center mt-4 pt-4 border-t border-white/20">
             <p class="text-sm text-gray-300">&copy; 2025 Aarsis Solutions. All rights reserved.</p>
           </div>
         </div>
