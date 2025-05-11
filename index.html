@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aarsis Solutions</title>
+  <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="image/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="aarsis" />
+  <link rel="manifest" href="images/favicon/site.webmanifest" />
+
+  <!-- Tailwind and FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Cal floating embed styles -->
+  <style>
+    .cal-modal-open {
+      overflow: hidden;
+    }
+  </style>
+  
+  <!-- Cal floating embed script -->
+  <script src="https://cal.com/js/embed.js" defer data-todo="update url"></script>
+
+  <style>
+    :root {
+      /* --primary: #e93e73; */
+      --primary: #E91E63;
+      --bg-light: #fbfafe;
+      --accent: #e8695f;
+      --highlight: #f6e11d;
+    }
+    .gradient-text {
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-gradient {
+      background: linear-gradient(135deg, var(--primary), #ff6b6b);
+    }
+    .navbar-blur {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .service-card {
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    /* Marquee Animation */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-[var(--bg-light)] text-gray-800 font-sans scroll-smooth">
+
+  <!-- Cal.com Embed Script -->
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init");
+  </script>
+
+  <!-- Navbar -->
+  <nav class="fixed w-full z-50 navbar-blur bg-white/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center space-x-2">
+            <img src="images/logo/logo_250_250.svg" alt="Aarsis Logo" class="h-8">
+            <span class="text-xl font-bold text-[var(--primary)]">aarsis</span>
+          </a>
+        </div>
+        <div class="hidden md:flex md:items-center md:space-x-8">
+          <a href="about.html" class="text-gray-600 hover:text-[var(--primary)] transition">About</a>
+          <a href="services.html" class="text-gray-600 hover:text-[var(--primary)] transition">Services</a>
+          <a href="team.html" class="text-gray-600 hover:text-[var(--primary)] transition">Team</a>
+          <a href="projects.html" class="text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
+          <a href="partners.html" class="text-gray-600 hover:text-[var(--primary)] transition">Partners</a>
+          <a href="contact.html" class="bg-[var(--primary)] text-white px-4 py-2 rounded hover:bg-[var(--accent)] transition">Contact</a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="menuBtn" class="text-gray-600 hover:text-[var(--primary)] transition">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white">
+      <div class="px-4 pt-2 pb-3 space-y-1">
+        <a href="about.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">About</a>
+        <a href="services.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Services</a>
+        <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Team</a>
+        <a href="projects.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
+        <a href="partners.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Partners</a>
+        <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero-gradient text-white pt-28 pb-20 relative">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between" data-aos="fade-up">
+      <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+          Transforming Ideas Into Digital Reality
+        </h1>
+        <p class="text-xl mb-8 text-gray-100">Building innovative software solutions that drive business growth and success.</p>
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+          <button
+            data-cal-link="aarsis/schedule-a-meeting"
+            data-cal-config='{"theme":"light","brandColor":"#E91E63"}'
+            class="inline-flex items-center justify-center bg-white text-[var(--primary)] font-semibold px-8 py-3 rounded-full hover:bg-[var(--highlight)] transition transform hover:scale-105 min-w-[200px]">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Schedule a Meeting
+          </button>
+          <a href="#services" 
+             class="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[var(--primary)] transition transform hover:scale-105 min-w-[200px]">
+            Our Services
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2" data-aos="zoom-in" data-aos-delay="200">
+        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_iorpbol0.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></lottie-player>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[var(--bg-light)] to-transparent"></div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="max-w-7xl mx-auto py-20 px-6" data-aos="fade-up">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 gradient-text inline-block">What We Do</h2>
+      <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_pwohahvd.json" background="transparent" speed="1" style="width: 100%; height: 300px;" loop autoplay></lottie-player>
+      </div>
+      <div data-aos="fade-left">
+        <h3 class="text-2xl font-bold mb-4 text-gray-800">Innovating Through Technology</h3>
+        <p class="text-lg text-gray-600 mb-6">
+          At Aarsis Solutions, we're passionate about transforming businesses through cutting-edge technology. Our expertise spans across custom development, mobile solutions, and cloud services, delivered by teams that truly understand your needs.
+        </p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-check-circle text-[var(--primary)]"></i>
+            <span>Agile Development</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-check-circle text-[var(--primary)]"></i>
+            <span>24/7 Support</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-check-circle text-[var(--primary)]"></i>
+            <span>Cloud Experts</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-check-circle text-[var(--primary)]"></i>
+            <span>Scalable Solutions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text inline-block">Our Services</h2>
+        <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Comprehensive solutions tailored to your business needs</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="service-card bg-[var(--bg-light)] p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-code text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Custom Software Development</h3>
+          <p class="text-gray-600">Tailored solutions that scale with your business needs and goals.</p>
+        </div>
+        <div class="service-card bg-[var(--bg-light)] p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-mobile-alt text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Mobile App Development</h3>
+          <p class="text-gray-600">Native and cross-platform apps that deliver exceptional user experiences.</p>
+        </div>
+        <div class="service-card bg-[var(--bg-light)] p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-cloud text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Cloud Services</h3>
+          <p class="text-gray-600">Secure, scalable, and reliable cloud solutions for your business.</p>
+        </div>
+        <div class="bg-[var(--bg-light)] p-6 rounded shadow text-center service-card" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="text-xl font-semibold mb-2">Domain & Hosting</h3>
+          <p class="text-[var(--accent)]">From DNS to SSL, we’ve got you covered.</p>
+        </div>
+        <div class="bg-[var(--bg-light)] p-6 rounded shadow text-center service-card" data-aos="fade-up" data-aos-delay="500">
+          <h3 class="text-xl font-semibold mb-2">IT Services</h3>
+          <p class="text-[var(--accent)]">Reliable IT support for your business operations.</p>
+        </div>
+        <div class="bg-[var(--bg-light)] p-6 rounded shadow text-center service-card" data-aos="fade-up" data-aos-delay="600">
+          <h3 class="text-xl font-semibold mb-2">Web App Development</h3>
+          <p class="text-[var(--accent)]">From SaaS dashboards to enterprise portals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hire Team -->
+  <section class="bg-[var(--accent)] text-white py-20 text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Hire a Dedicated Team</h2>
+    <p class="max-w-xl mx-auto mb-6">Access top talent — engineers, designers, QA — for your next big move.</p>
+    <a href="#contact" class="bg-white text-[var(--primary)] font-semibold px-6 py-3 rounded hover:bg-[var(--highlight)] transition">Start Hiring</a>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-20 bg-[var(--bg-light)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text inline-block">Our Team</h2>
+        <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Meet our talented team of professionals</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://avatars.githubusercontent.com/u/23101548?v=4" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Imran N. Emon</h3>
+          <p class="text-[var(--accent)]">Chief Executive Officer</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Mosiur Farabi</h3>
+          <p class="text-[var(--accent)]">Chief Financial Officer</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://avatars.githubusercontent.com/u/77047816?v=4" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Maidul I. Rifat</h3>
+          <p class="text-[var(--accent)]">Chief Operating Officer</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Sabbir Chowdhury</h3>
+          <p class="text-[var(--accent)]">Chief Marketing Officer</p>
+        </div>
+      </div>
+      
+      <!-- See All Members Button -->
+      <div class="text-center mt-12" data-aos="fade-up">
+        <button id="seeAllBtn" class="bg-[var(--primary)] text-white px-8 py-3 rounded-full hover:bg-[var(--accent)] transition transform hover:scale-105 inline-flex items-center space-x-2">
+          <span>See All Members</span>
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+      </div>
+
+      <!-- Hidden Team Members -->
+      <div id="allMembers" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 hidden">
+        <div class="text-center" data-aos="fade-up">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Zubair Rahman</h3>
+          <p class="text-[var(--accent)]">Team Lead, Software Development (Frontend)</p>
+        </div>
+        <div class="text-center" data-aos="fade-up">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Masud Bhuiyan</h3>
+          <p class="text-[var(--accent)]">Team Lead, Software Development (Backend)</p>
+        </div>
+        <div class="text-center" data-aos="fade-up">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Mahfuz Hasan</h3>
+          <p class="text-[var(--accent)]">Sr. Software Engineer (Frontend)</p>
+        </div>
+        <div class="text-center" data-aos="fade-up">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://avatars.githubusercontent.com/u/56254274?v=4" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Nafis Nihal</h3>
+          <p class="text-[var(--accent)]">Sr. Software Engineer (Frontend)</p>
+        </div>
+        <div class="text-center" data-aos="fade-up">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Esrat Jahan Mumu</h3>
+          <p class="text-[var(--accent)]">Software Engineer (Backend)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="py-20 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text inline-block">Our Clients</h2>
+        <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Trusted by leading companies worldwide</p>
+      </div>
+      
+      <!-- Marquee Animation -->
+      <div class="relative">
+        <div class="flex space-x-16 animate-marquee">
+          <div class="flex space-x-16 min-w-full">
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/500px-IBM_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/500px-Microsoft_logo_%282012%29.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/500px-Amazon_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/500px-Netflix_2015_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+          </div>
+          <div class="flex space-x-16 min-w-full">
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/500px-IBM_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/500px-Microsoft_logo_%282012%29.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/500px-Amazon_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/500px-Netflix_2015_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Projects -->
+  <section class="py-20 bg-[var(--bg-light)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text inline-block">Recent Projects</h2>
+        <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Showcasing our latest work and innovations</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHdlYnNpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" 
+                 alt="Project" 
+                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <a href="#" class="bg-white text-[var(--primary)] px-6 py-2 rounded-full transform -translate-y-4 group-hover:translate-y-0 transition">View Project</a>
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+            <p class="text-gray-600">A full-featured online shopping platform with AI-powered recommendations.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXBwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" 
+                 alt="Project" 
+                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <a href="#" class="bg-white text-[var(--primary)] px-6 py-2 rounded-full transform -translate-y-4 group-hover:translate-y-0 transition">View Project</a>
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold mb-2">Health Tracking App</h3>
+            <p class="text-gray-600">Mobile application for tracking health metrics and wellness goals.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRhc2hib2FyZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" 
+                 alt="Project" 
+                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <a href="#" class="bg-white text-[var(--primary)] px-6 py-2 rounded-full transform -translate-y-4 group-hover:translate-y-0 transition">View Project</a>
+            </div>
+          </div>
+          <div class="p-6 bg-white">
+            <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+            <p class="text-gray-600">Real-time data visualization and business intelligence platform.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Projects Button -->
+      <div class="text-center mt-12">
+        <a href="#" class="inline-flex items-center space-x-2 bg-[var(--primary)] text-white px-8 py-3 rounded-full hover:bg-[var(--accent)] transition transform hover:scale-105">
+          <span>View All Projects</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="py-20 bg-gradient-to-b from-white to-[var(--bg-light)]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text inline-block">Our Partners</h2>
+        <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Collaborating with industry leaders to deliver excellence</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Partner 1 -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png" alt="Microsoft" class="h-16">
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-center">Microsoft</h3>
+            <p class="text-gray-600 text-center mb-6">Gold Partner for Cloud Solutions and Azure Services</p>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Cloud Services</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Azure</span>
+            </div>
+            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
+              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
+                <span>Learn More</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partner 2 -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/200px-IBM_logo.svg.png" alt="IBM" class="h-16">
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-center">IBM</h3>
+            <p class="text-gray-600 text-center mb-6">Strategic Partner for AI and Enterprise Solutions</p>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">AI</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Enterprise</span>
+            </div>
+            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
+              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
+                <span>Learn More</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partner 3 -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/200px-Amazon_Web_Services_Logo.svg.png" alt="AWS" class="h-16">
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-center">Amazon Web Services</h3>
+            <p class="text-gray-600 text-center mb-6">Advanced Partner for Cloud Infrastructure</p>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">AWS</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Cloud</span>
+            </div>
+            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
+              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
+                <span>Learn More</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partner 4 -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/200px-Google_%22G%22_logo.svg.png" alt="Google" class="h-16">
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-center">Google Cloud</h3>
+            <p class="text-gray-600 text-center mb-6">Premium Partner for Cloud & ML Solutions</p>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">GCP</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">ML</span>
+            </div>
+            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
+              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
+                <span>Learn More</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partner 5 -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Salesforce.com_logo.svg/200px-Salesforce.com_logo.svg.png" alt="Salesforce" class="h-16">
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-center">Salesforce</h3>
+            <p class="text-gray-600 text-center mb-6">Certified Partner for CRM Solutions</p>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">CRM</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Integration</span>
+            </div>
+            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
+              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
+                <span>Learn More</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partner 6 -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Oracle_logo.svg/200px-Oracle_logo.svg.png" alt="Oracle" class="h-16">
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-center">Oracle</h3>
+            <p class="text-gray-600 text-center mb-6">Gold Partner for Database Solutions</p>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Database</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Cloud</span>
+            </div>
+            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
+              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
+                <span>Learn More</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partnership CTA -->
+      <div class="text-center mt-16" data-aos="fade-up">
+        <p class="text-xl text-gray-600 mb-6">Interested in becoming a partner?</p>
+        <a href="#contact" class="inline-flex items-center space-x-2 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-500">
+          <span>Partner With Us</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="bg-[var(--primary)] text-white">
+    <div class="max-w-7xl mx-auto">
+      <!-- Contact Section -->
+      <div class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-8">Let's Collaborate</h2>
+          <p class="text-xl mb-12">Have an idea or need a tech partner? We're here to help you succeed.</p>
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 rounded-lg bg-white/10 backdrop-blur">
+              <i class="fas fa-envelope text-3xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Email Us</h3>
+              <a href="mailto:info@aarsissolutions.com" class="hover:text-[var(--highlight)] transition">info@aarsissolutions.com</a>
+            </div>
+            <div class="p-6 rounded-lg bg-white/10 backdrop-blur">
+              <i class="fas fa-map-marker-alt text-3xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Visit Us</h3>
+              <p>123 Tech Street<br/>Silicon Valley, CA 94025</p>
+            </div>
+            <div class="p-6 rounded-lg bg-white/10 backdrop-blur">
+              <i class="fas fa-phone text-3xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Call Us</h3>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+          <div class="grid md:grid-cols-4 gap-8">
+            <div class="mb-8 md:mb-0">
+              <h3 class="text-2xl font-bold mb-4">Aarsis</h3>
+              <p class="text-sm text-gray-300">Transforming ideas into digital reality through innovative software solutions.</p>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><a href="#about" class="hover:text-[var(--highlight)] transition">About Us</a></li>
+                <li><a href="#services" class="hover:text-[var(--highlight)] transition">Services</a></li>
+                <li><a href="#team" class="hover:text-[var(--highlight)] transition">Team</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Services</h4>
+              <ul class="space-y-2">
+                <li><a href="#" class="hover:text-[var(--highlight)] transition">Custom Development</a></li>
+                <li><a href="#" class="hover:text-[var(--highlight)] transition">Mobile Apps</a></li>
+                <li><a href="#" class="hover:text-[var(--highlight)] transition">Cloud Services</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="hover:text-[var(--highlight)] transition"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-[var(--highlight)] transition"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-[var(--highlight)] transition"><i class="fab fa-github text-xl"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-12 pt-8 border-t border-white/20">
+            <p class="text-sm text-gray-300">&copy; 2025 Aarsis Solutions. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Add this to your existing scripts section
+    document.getElementById('seeAllBtn').addEventListener('click', function() {
+      const allMembers = document.getElementById('allMembers');
+      const icon = this.querySelector('i');
+      
+      allMembers.classList.toggle('hidden');
+      icon.style.transform = allMembers.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      this.querySelector('span').textContent = allMembers.classList.contains('hidden') ? 'See All Members' : 'Show Less';
+    });
+  </script>
+
+  <!-- Cal.com initialization -->
+  <script>
+    window.addEventListener('load', () => {
+      Cal('init', {
+        elementOrSelector: '[data-cal-link]',
+        calLink: "aarsis/schedule-a-meeting",
+        config: {
+          name: "Meeting with Aarsis Solutions",
+          email: "",
+          notes: "",
+          theme: "light",
+          layout: "month_view",
+          isDarkVariant: false,
+          customCss: `
+            :root {
+              --cal-brand: #E91E63;
+              --cal-brand-emphasis: #d81557;
+            }
+          `
+        }
+      });
+    });
+  </script>
+</body>
+</html>

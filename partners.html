@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partners - Aarsis Solutions</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="aarsis" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E91E63;
+            --bg-light: #fbfafe;
+            --accent: #e8695f;
+            --highlight: #f6e11d;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+        }
+        .partner-card {
+            transition: all 0.3s ease;
+        }
+        .partner-card:hover {
+            transform: translateY(-5px);
+        }
+        .tier-card {
+            transition: all 0.3s ease;
+        }
+        .tier-card:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-[var(--bg-light)] text-gray-800 font-sans">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 navbar-blur bg-white/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="logo-transparent.png" alt="Aarsis Logo" class="h-8">
+                        <span class="text-xl font-bold text-[var(--primary)]">Aarsis</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="about.html" class="text-gray-600 hover:text-[var(--primary)] transition">About</a>
+                    <a href="services.html" class="text-gray-600 hover:text-[var(--primary)] transition">Services</a>
+                    <a href="team.html" class="text-gray-600 hover:text-[var(--primary)] transition">Team</a>
+                    <a href="projects.html" class="text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
+                    <a href="partners.html" class="text-[var(--primary)] font-medium">Partners</a>
+                    <a href="contact.html" class="bg-[var(--primary)] text-white px-4 py-2 rounded hover:bg-[var(--accent)] transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menuBtn" class="text-gray-600 hover:text-[var(--primary)] transition">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="about.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">About</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Services</a>
+                <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Team</a>
+                <a href="projects.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
+                <a href="partners.html" class="block px-3 py-2 text-[var(--primary)] font-medium">Partners</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-32 pb-16 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Partner With Us</h1>
+                <p class="text-xl opacity-90">Join our ecosystem of innovation and success</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Partnership Benefits -->
+            <section class="mb-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4 gradient-text">Partnership Benefits</h2>
+                    <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center" data-aos="fade-up">
+                        <div class="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Market Access</h3>
+                        <p class="text-gray-600">Reach new markets and customers through our extensive network.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Technical Support</h3>
+                        <p class="text-gray-600">Access to our expert technical team and resources.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Growth Opportunities</h3>
+                        <p class="text-gray-600">Joint marketing and business development initiatives.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Partnership Tiers -->
+            <section class="mb-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4 gradient-text">Partnership Tiers</h2>
+                    <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="tier-card bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Silver</h3>
+                            <div class="text-[var(--primary)] text-4xl font-bold mb-4">
+                                <span class="text-2xl">$</span>1,000
+                                <span class="text-lg text-gray-600">/year</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Basic Technical Support
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Partner Directory Listing
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Quarterly Newsletter
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="contact.html" class="inline-block bg-[var(--primary)] text-white px-6 py-2 rounded-full hover:bg-[var(--accent)] transition">Get Started</a>
+                        </div>
+                    </div>
+
+                    <div class="tier-card bg-white p-8 rounded-lg shadow-lg relative" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute top-0 right-0 bg-[var(--primary)] text-white px-4 py-1 rounded-tr-lg rounded-bl-lg">Popular</div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Gold</h3>
+                            <div class="text-[var(--primary)] text-4xl font-bold mb-4">
+                                <span class="text-2xl">$</span>2,500
+                                <span class="text-lg text-gray-600">/year</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                All Silver Benefits
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Priority Support
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Joint Marketing Opportunities
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Quarterly Business Review
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="contact.html" class="inline-block bg-[var(--primary)] text-white px-6 py-2 rounded-full hover:bg-[var(--accent)] transition">Get Started</a>
+                        </div>
+                    </div>
+
+                    <div class="tier-card bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Platinum</h3>
+                            <div class="text-[var(--primary)] text-4xl font-bold mb-4">
+                                <span class="text-2xl">$</span>5,000
+                                <span class="text-lg text-gray-600">/year</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                All Gold Benefits
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Dedicated Account Manager
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Early Access to New Features
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-[var(--primary)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Custom Integration Support
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="contact.html" class="inline-block bg-[var(--primary)] text-white px-6 py-2 rounded-full hover:bg-[var(--accent)] transition">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Success Stories -->
+            <section class="mb-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4 gradient-text">Success Stories</h2>
+                    <div class="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+                        <div class="flex items-center mb-6">
+                            <img src="https://ui-avatars.com/api/?name=Tech+Solutions&background=random" alt="Partner Logo" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Tech Solutions Inc.</h3>
+                                <p class="text-[var(--accent)]">Gold Partner</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">"Partnering with Aarsis Solutions has been transformative for our business. Their technical expertise and support have helped us deliver better solutions to our clients."</p>
+                        <p class="font-medium">- John Smith, CEO</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-6">
+                            <img src="https://ui-avatars.com/api/?name=Digital+Innovators&background=random" alt="Partner Logo" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h3 class="text-xl font-semibold">Digital Innovators Ltd.</h3>
+                                <p class="text-[var(--accent)]">Platinum Partner</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">"The partnership program has opened new opportunities for growth and innovation. The dedicated support team has been instrumental in our success."</p>
+                        <p class="font-medium">- Sarah Johnson, CTO</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Become a Partner CTA -->
+            <section class="bg-white p-12 rounded-lg shadow-lg text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-6">Ready to Partner With Us?</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Join our partner ecosystem and unlock new opportunities for growth and innovation. Let's create success together.</p>
+                <a href="contact.html" class="inline-flex items-center space-x-2 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white px-8 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-500">
+                    <span>Apply Now</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--primary)] text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center">
+                <p>&copy; 2025 Aarsis Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
