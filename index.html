@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aarsis Solutions</title>
+  <title>aarsis Solutions</title>
   <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="image/favicon/favicon.svg" />
   <link rel="shortcut icon" href="images/favicon/favicon.ico" />
@@ -110,12 +110,12 @@
           </a>
         </div>
         <div class="hidden md:flex md:items-center md:space-x-8">
-          <a href="about.html" class="text-gray-600 hover:text-[var(--primary)] transition">About</a>
-          <a href="services.html" class="text-gray-600 hover:text-[var(--primary)] transition">Services</a>
-          <a href="team.html" class="text-gray-600 hover:text-[var(--primary)] transition">Team</a>
-          <a href="projects.html" class="text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
-          <a href="partners.html" class="text-gray-600 hover:text-[var(--primary)] transition">Partners</a>
-          <a href="contact.html" class="bg-[var(--primary)] text-white px-4 py-2 rounded hover:bg-[var(--accent)] transition">Contact</a>
+          <a href="#about" class="text-gray-600 hover:text-[var(--primary)] transition">About</a>
+          <a href="#services" class="text-gray-600 hover:text-[var(--primary)] transition">Services</a>
+          <a href="#team" class="text-gray-600 hover:text-[var(--primary)] transition">Team</a>
+          <a href="#projects" class="text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
+          <a href="#partners" class="text-gray-600 hover:text-[var(--primary)] transition">Partners</a>
+          <a href="#contact" class="bg-[var(--primary)] text-white px-4 py-2 rounded hover:bg-[var(--accent)] transition">Contact</a>
         </div>
         <!-- Mobile menu button -->
         <div class="md:hidden">
@@ -130,19 +130,19 @@
     <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white">
       <div class="px-4 pt-2 pb-3 space-y-1">
-        <a href="about.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">About</a>
-        <a href="services.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Services</a>
-        <a href="team.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Team</a>
-        <a href="projects.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
-        <a href="partners.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Partners</a>
-        <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Contact</a>
+        <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">About</a>
+        <a href="#services" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Services</a>
+        <a href="#team" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Team</a>
+        <a href="#projects" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Projects</a>
+        <a href="#partners" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Partners</a>
+        <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-[var(--primary)] transition">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
   <header class="hero-gradient text-white pt-28 pb-20 relative">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between" data-aos="fade-right">
       <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
         <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
           Transforming Ideas Into Digital Reality
@@ -258,7 +258,16 @@
   <section class="bg-[var(--accent)] text-white py-20 text-center" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-4">Hire a Dedicated Team</h2>
     <p class="max-w-xl mx-auto mb-6">Access top talent — engineers, designers, QA — for your next big move.</p>
-    <a href="#contact" class="bg-white text-[var(--primary)] font-semibold px-6 py-3 rounded hover:bg-[var(--highlight)] transition">Start Hiring</a>
+    <button
+            data-cal-link="aarsis/schedule-a-meeting"
+            data-cal-config='{"theme":"light","brandColor":"#E91E63"}'
+            class="inline-flex items-center justify-center bg-white text-[var(--primary)] font-semibold px-8 py-3 rounded-full hover:bg-[var(--highlight)] transition transform hover:scale-105 min-w-[200px]">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Start Hiring
+          </button>
+    <!-- <a href="#contact" class="bg-white text-[var(--primary)] font-semibold px-6 py-3 rounded hover:bg-[var(--highlight)] transition">Start Hiring</a> -->
   </section>
 
   <!-- Team Section -->
@@ -285,7 +294,7 @@
           <div class="relative mb-4 inline-block">
             <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
               <div class="w-full h-full bg-white rounded-full overflow-hidden">
-                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Team Member" class="w-full h-full object-cover">
+                <img src="https://media.licdn.com/dms/image/v2/D5603AQH_heE_UPeMag/profile-displayphoto-shrink_400_400/B56ZT2OOhtHsAg-/0/1739297713477?e=1752710400&v=beta&t=oCo8A6GMrkRvrsJ7xLoURpIXRqZIfgimy0NTcV3iEmQ" alt="Team Member" class="w-full h-full object-cover">
               </div>
             </div>
           </div>
@@ -307,7 +316,7 @@
           <div class="relative mb-4 inline-block">
             <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
               <div class="w-full h-full bg-white rounded-full overflow-hidden">
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+                <img src="https://cdn-icons-png.flaticon.com/512/6837/6837225.png" alt="Team Member" class="w-full h-full object-cover">
               </div>
             </div>
           </div>
@@ -330,7 +339,7 @@
           <div class="relative mb-4 inline-block">
             <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
               <div class="w-full h-full bg-white rounded-full overflow-hidden">
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+                <img src="https://media.licdn.com/dms/image/v2/D5603AQH7UYYLmpe1_w/profile-displayphoto-shrink_400_400/B56ZSnb0e_GUAo-/0/1737975877887?e=1752710400&v=beta&t=GgdYEpc3I_ekgXirTFKDunmuDoeam0JaicAAdkDg5xQ" alt="Team Member" class="w-full h-full object-cover">
               </div>
             </div>
           </div>
@@ -341,7 +350,7 @@
           <div class="relative mb-4 inline-block">
             <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
               <div class="w-full h-full bg-white rounded-full overflow-hidden">
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+                <img src="https://avatars.githubusercontent.com/u/28151728?v=4" alt="Team Member" class="w-full h-full object-cover">
               </div>
             </div>
           </div>
@@ -352,7 +361,7 @@
           <div class="relative mb-4 inline-block">
             <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
               <div class="w-full h-full bg-white rounded-full overflow-hidden">
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+                <img src="https://avatars.githubusercontent.com/u/91074445?v=4" alt="Team Member" class="w-full h-full object-cover">
               </div>
             </div>
           </div>
@@ -374,12 +383,23 @@
           <div class="relative mb-4 inline-block">
             <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
               <div class="w-full h-full bg-white rounded-full overflow-hidden">
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member" class="w-full h-full object-cover">
+                <img src="https://cdn-icons-png.flaticon.com/512/6837/6837225.png" alt="Team Member" class="w-full h-full object-cover">
               </div>
             </div>
           </div>
           <h3 class="text-xl font-semibold">Esrat Jahan Mumu</h3>
           <p class="text-[var(--accent)]">Software Engineer (Backend)</p>
+        </div>
+        <div class="text-center" data-aos="fade-up">
+          <div class="relative mb-4 inline-block">
+            <div class="w-40 h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full p-1">
+              <div class="w-full h-full bg-white rounded-full overflow-hidden">
+                <img src="https://avatars.githubusercontent.com/u/91328279?v=4" alt="Team Member" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold">Al Amin</h3>
+          <p class="text-[var(--accent)]">Software Engineer (Frontend)</p>
         </div>
       </div>
     </div>
@@ -399,36 +419,24 @@
         <div class="flex space-x-16 animate-marquee">
           <div class="flex space-x-16 min-w-full">
             <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+              <img src="images/partners/founders-credit-logo.png" alt="Founders Credit" class="max-w-full max-h-full">
             </div>
             <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/500px-IBM_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+              <img src="images/partners/hostever-logo.png" alt="Domain & Hosting" class="max-w-full max-h-full">
             </div>
             <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/500px-Microsoft_logo_%282012%29.svg.png" alt="Client Logo" class="max-w-full max-h-full">
-            </div>
-            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/500px-Amazon_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
-            </div>
-            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/500px-Netflix_2015_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+              <img src="images/partners/mim-sms-logo.png" alt="Bulk SMS" class="max-w-full max-h-full">
             </div>
           </div>
           <div class="flex space-x-16 min-w-full">
             <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+              <img src="images/partners/founders-credit-logo.png" alt="Founders Credit" class="max-w-full max-h-full">
             </div>
             <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/500px-IBM_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+              <img src="images/partners/hostever-logo.png" alt="Domain & Hosting" class="max-w-full max-h-full">
             </div>
             <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/500px-Microsoft_logo_%282012%29.svg.png" alt="Client Logo" class="max-w-full max-h-full">
-            </div>
-            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/500px-Amazon_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
-            </div>
-            <div class="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/500px-Netflix_2015_logo.svg.png" alt="Client Logo" class="max-w-full max-h-full">
+              <img src="images/partners/mim-sms-logo.png" alt="Bulk SMS" class="max-w-full max-h-full">
             </div>
           </div>
         </div>
@@ -515,134 +523,71 @@
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Partner 1 -->
+        <!-- Partner 1: Founders Credit -->
         <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
           <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/200px-Microsoft_logo.svg.png" alt="Microsoft" class="h-16">
+              <img src="https://www.logo.wine/a/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.svg" alt="Founders Credit" class="h-16">
             </div>
-            <h3 class="text-xl font-semibold mb-4 text-center">Microsoft</h3>
-            <p class="text-gray-600 text-center mb-6">Gold Partner for Cloud Solutions and Azure Services</p>
+            <h3 class="text-xl font-semibold mb-4 text-center">AWS Web Servicest</h3>
+            <p class="text-gray-600 text-center mb-6">Strategic Partner for Founders Credit</p>
             <div class="flex flex-wrap justify-center gap-2">
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Business Credit</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Server Management</span>
               <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Cloud Services</span>
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Azure</span>
-            </div>
-            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
-              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
-                <span>Learn More</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              </a>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Web Hosting</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Cloud Computing</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Lambda Functions</span>
             </div>
           </div>
         </div>
 
-        <!-- Partner 2 -->
+        <!-- Partner 2: Domain & Hosting -->
         <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
           <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/200px-IBM_logo.svg.png" alt="IBM" class="h-16">
+              <img src="https://cdn.hostadvice.com/2020/10/code-for-host-copy-300x194.png" alt="Domain & Hosting" class="h-16">
             </div>
-            <h3 class="text-xl font-semibold mb-4 text-center">IBM</h3>
-            <p class="text-gray-600 text-center mb-6">Strategic Partner for AI and Enterprise Solutions</p>
+            <h3 class="text-xl font-semibold mb-4 text-center">Domain & Hosting</h3>
+            <p class="text-gray-600 text-center mb-6">Premium Partner for Hosting Solutions</p>
             <div class="flex flex-wrap justify-center gap-2">
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">AI</span>
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Enterprise</span>
-            </div>
-            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
-              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
-                <span>Learn More</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              </a>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Hosting</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Domain</span>
+
             </div>
           </div>
         </div>
 
-        <!-- Partner 3 -->
+        <!-- Partner 3: Bulk SMS -->
         <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
           <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/200px-Amazon_Web_Services_Logo.svg.png" alt="AWS" class="h-16">
+              <img src="https://www.mimsms.com/storage/2021/07/mim_digital_marketing_logo.png" alt="Bulk SMS" class="h-16">
             </div>
-            <h3 class="text-xl font-semibold mb-4 text-center">Amazon Web Services</h3>
-            <p class="text-gray-600 text-center mb-6">Advanced Partner for Cloud Infrastructure</p>
+            <h3 class="text-xl font-semibold mb-4 text-center">Bulk SMS</h3>
+            <p class="text-gray-600 text-center mb-6">Leading Provider for SMS Solutions</p>
             <div class="flex flex-wrap justify-center gap-2">
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">AWS</span>
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Cloud</span>
-            </div>
-            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
-              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
-                <span>Learn More</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              </a>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">SMS</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Communication</span>
             </div>
           </div>
         </div>
-
-        <!-- Partner 4 -->
-        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+        
+        <!-- Partner 4 Education Consultancy -->
+        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
           <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/200px-Google_%22G%22_logo.svg.png" alt="Google" class="h-16">
+              <img src="https://umar-eg.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbrandlogo.585bd027.png&w=3840&q=75" alt="Bulk SMS" class="h-16">
             </div>
-            <h3 class="text-xl font-semibold mb-4 text-center">Google Cloud</h3>
-            <p class="text-gray-600 text-center mb-6">Premium Partner for Cloud & ML Solutions</p>
+            <h3 class="text-xl font-semibold mb-4 text-center">Umar Education</h3>
+            <p class="text-gray-600 text-center mb-6">Leading Provider for Education Consultancy</p>
             <div class="flex flex-wrap justify-center gap-2">
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">GCP</span>
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">ML</span>
-            </div>
-            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
-              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
-                <span>Learn More</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Partner 5 -->
-        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="500">
-          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
-          <div class="relative z-10">
-            <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Salesforce.com_logo.svg/200px-Salesforce.com_logo.svg.png" alt="Salesforce" class="h-16">
-            </div>
-            <h3 class="text-xl font-semibold mb-4 text-center">Salesforce</h3>
-            <p class="text-gray-600 text-center mb-6">Certified Partner for CRM Solutions</p>
-            <div class="flex flex-wrap justify-center gap-2">
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">CRM</span>
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Integration</span>
-            </div>
-            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
-              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
-                <span>Learn More</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Partner 6 -->
-        <div class="group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative overflow-hidden" data-aos="fade-up" data-aos-delay="600">
-          <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
-          <div class="relative z-10">
-            <div class="flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Oracle_logo.svg/200px-Oracle_logo.svg.png" alt="Oracle" class="h-16">
-            </div>
-            <h3 class="text-xl font-semibold mb-4 text-center">Oracle</h3>
-            <p class="text-gray-600 text-center mb-6">Gold Partner for Database Solutions</p>
-            <div class="flex flex-wrap justify-center gap-2">
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Database</span>
-              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Cloud</span>
-            </div>
-            <div class="mt-6 text-center opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-500">
-              <a href="#" class="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--accent)]">
-                <span>Learn More</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              </a>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Education</span>
+              <span class="px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white rounded-full text-sm font-medium">Consultancy</span>
             </div>
           </div>
         </div>
